@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Expense Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Expense Data</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Income</th>
+                    <th>Groceries</th>
+                    <th>Rent</th>
+                    <th>Transportation</th>
+                    <th>Entertainment</th>
+                    <th>Education</th>
+                    <th>Utilities</th>
+                    <th>Miscellaneous</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{ student['name'] }}</td>
+                    <td>{{ student['age'] }}</td>
+                    <td>{{ student['income'] }}</td>
+                    <td>{{ student['groceries'] }}</td>
+                    <td>{{ student['rent'] }}</td>
+                    <td>{{ student['transportation'] }}</td>
+                    <td>{{ student['entertainment'] }}</td>
+                    <td>{{ student['education'] }}</td>
+                    <td>{{ student['utilities'] }}</td>
+                    <td>{{ student['miscellaneous'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
